@@ -1,13 +1,14 @@
 import axios from "axios";
-const fetcheData = (url) => {
-  axios.get(url).then((response) => {
-    response.data
-  });
-  const {data, loading, error} = useSWR(url,fetcheData)
-  return{
+import useSWR from "swr";
+const fetcheData = (url) => fetch(url).then((res) => res.json());
+
+const useFetch = (url) => {
+  const { data, isLoading, error } = useSWR(url, fetcheData);
+  return {
     data,
-    loading: !data && !error,
+    isLoading: !data && !error,
+    // isLoading,
     error
-  }
 }
-  export default fetcheData;
+  }
+  export default useFetch;

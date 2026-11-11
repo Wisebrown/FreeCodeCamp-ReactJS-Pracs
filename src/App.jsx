@@ -1,7 +1,8 @@
-import "./App.css";
+// import "./App.css";
 // import "./superHero.css";
 import { OTPGenerator } from "./OTP generator";
 import SuperheroForm from "./superHero app form";
+import Fetching from "./fetching";
 function App() {
   return (
     <>
@@ -9,7 +10,8 @@ function App() {
         <h1 className="text-4xl font-bold">Hello Tailwind</h1>
       </div> */}
       {/* <OTPGenerator /> */}
-      <SuperheroForm />
+      {/* <SuperheroForm /> */}
+      <Fetching />
     </>
   );
 }
